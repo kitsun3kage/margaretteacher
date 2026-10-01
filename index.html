@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
+  
   <style>
     :root {
       --primary: #611A2A;
@@ -52,7 +53,6 @@
       overflow-x: hidden;
     }
 
-    /* Navigation Header */
     header {
       position: sticky;
       top: 0;
@@ -187,7 +187,6 @@
       margin-left: 6px;
     }
 
-    /* Views Framework */
     main {
       flex: 1;
     }
@@ -206,7 +205,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Hero Section */
     .hero-container {
       max-width: 1200px;
       margin: 0 auto;
@@ -259,7 +257,6 @@
       box-shadow: 0 12px 25px rgba(97, 26, 42, 0.35);
     }
 
-    /* Circular Avatar Box */
     .hero-avatar-wrapper {
       display: flex;
       justify-content: center;
@@ -280,7 +277,6 @@
       box-shadow: var(--shadow-lg);
       text-align: center;
       overflow: hidden;
-      padding: 1.5rem;
     }
 
     .hero-avatar-card img {
@@ -294,28 +290,30 @@
     }
 
     .hero-avatar-card-content {
-      position: relative;
+      position: absolute;
+      bottom: 20px;
       z-index: 2;
-      background-color: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(4px);
-      padding: 0.75rem 1.25rem;
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-sm);
+      background-color: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(6px);
+      padding: 0.6rem 1.25rem;
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--primary-border);
     }
 
     .hero-avatar-name {
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--primary);
+      line-height: 1.2;
     }
 
     .hero-avatar-role {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
-      margin-top: 0.15rem;
+      margin-top: 0.1rem;
     }
 
-    /* Cards Section */
     .cards-section {
       background-color: var(--primary-subtle);
       padding: 4rem 2rem 5rem 2rem;
@@ -408,7 +406,6 @@
       gap: 0.7rem;
     }
 
-    /* Page Container */
     .page-container {
       max-width: 1100px;
       margin: 0 auto;
@@ -432,7 +429,6 @@
       color: var(--text-muted);
     }
 
-    /* Empty Shop */
     .empty-shop-card {
       background-color: var(--bg-card);
       border: 2px dashed var(--primary-border);
@@ -468,29 +464,19 @@
       line-height: 1.6;
     }
 
-    /* ABOUT SECTION STYLES */
     .about-section-wrapper {
       padding-bottom: 4rem;
     }
 
-    /* Straight Splitter Banner */
-    .about-simple-banner {
+    /* Thin Separator Bar (Cienki pasek bez napisu) */
+    .about-thin-separator {
+      height: 8px;
       background-color: var(--primary);
-      color: white;
-      text-align: center;
-      padding: 2.5rem 1.5rem;
+      border-radius: var(--radius-full);
       margin: 3.5rem 0;
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-md);
+      box-shadow: 0 2px 6px rgba(97, 26, 42, 0.2);
     }
 
-    .about-simple-banner-title {
-      font-size: 1.8rem;
-      font-weight: 800;
-      letter-spacing: -0.01em;
-    }
-
-    /* Block Rows */
     .about-block-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -511,7 +497,6 @@
       margin-bottom: 0;
     }
 
-    /* Polygon Shaped Photo Boxes */
     .photo-shape-container {
       width: 100%;
       max-width: 440px;
@@ -539,7 +524,6 @@
       object-fit: cover;
     }
 
-    /* Shopping Cart Drawer */
     .cart-drawer-overlay {
       position: fixed;
       top: 0;
@@ -635,7 +619,6 @@
       margin-bottom: 1.25rem;
     }
 
-    /* Footer */
     footer {
       background-color: var(--bg-white);
       border-top: 1px solid var(--border-color);
@@ -645,7 +628,18 @@
       color: var(--text-muted);
     }
 
-    /* Responsive */
+    .footer-author-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.2s ease, text-decoration 0.2s ease;
+    }
+
+    .footer-author-link:hover {
+      color: var(--primary-hover);
+      text-decoration: underline;
+    }
+
     @media (max-width: 900px) {
       .hero-container {
         grid-template-columns: 1fr;
@@ -689,7 +683,6 @@
 </head>
 <body>
 
-  <!-- HEADER / NAVIGATION -->
   <header>
     <div class="header-container">
       <div class="brand-logo" onclick="switchTab('home')">
@@ -726,7 +719,6 @@
     </div>
   </header>
 
-  <!-- MAIN CONTENT -->
   <main>
     <!-- HOME VIEW -->
     <div id="view-home" class="view-section active">
@@ -742,11 +734,10 @@
           </button>
         </div>
 
-        <!-- CIRCULAR AVATAR BOX -->
+        <!-- CIRCULAR AVATAR BOX WITH SAMPLE IMAGE -->
         <div class="hero-avatar-wrapper">
           <div class="hero-avatar-card">
-            <!-- Podmień wartość src poniżej na ścieżkę do swojego zdjęcia np. src="profilowe.jpg" -->
-            <img src="profilowe.jpg" alt="Małgorzata Rutkowska" onerror="this.style.display='none'">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" alt="Małgorzata Rutkowska — Margaret Teacher">
             <div class="hero-avatar-card-content">
               <h2 class="hero-avatar-name">Małgorzata Rutkowska</h2>
               <p class="hero-avatar-role">Margaret Teacher</p>
@@ -760,8 +751,7 @@
         <div class="cards-grid">
           <div class="feature-card">
             <div class="feature-img-wrapper">
-              <!-- Wstaw własne zdjęcie do karty -->
-              <img src="sklep.jpg" alt="Sklep internetowy" onerror="this.style.display='none'">
+              <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=600&auto=format&fit=crop" alt="Sklep internetowy">
             </div>
             <div class="feature-card-content">
               <h3 class="feature-title">Sklep internetowy</h3>
@@ -776,8 +766,7 @@
 
           <div class="feature-card">
             <div class="feature-img-wrapper">
-              <!-- Wstaw własne zdjęcie do karty -->
-              <img src="scenariusze.jpg" alt="Scenariusze" onerror="this.style.display='none'">
+              <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=600&auto=format&fit=crop" alt="Scenariusze">
             </div>
             <div class="feature-card-content">
               <h3 class="feature-title">Scenariusze</h3>
@@ -792,8 +781,7 @@
 
           <div class="feature-card">
             <div class="feature-img-wrapper">
-              <!-- Wstaw własne zdjęcie do karty -->
-              <img src="ebooki.jpg" alt="E-booki" onerror="this.style.display='none'">
+              <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=600&auto=format&fit=crop" alt="E-booki">
             </div>
             <div class="feature-card-content">
               <h3 class="feature-title">E-booki</h3>
@@ -809,7 +797,6 @@
       </section>
     </div>
 
-    <!-- SHOP VIEW -->
     <div id="view-shop" class="view-section">
       <div class="page-container">
         <div class="page-header">
@@ -829,7 +816,6 @@
       </div>
     </div>
 
-    <!-- ABOUT VIEW -->
     <div id="view-about" class="view-section">
       <div class="page-container about-section-wrapper">
         <div class="page-header">
@@ -850,23 +836,19 @@
 
           <div class="photo-shape-container">
             <div class="photo-shape-right">
-              <!-- Wstaw ścieżkę do pierwszego zdjęcia O mnie -->
-              <img src="o-mnie-1.jpg" alt="Małgorzata Rutkowska" onerror="this.style.display='none'">
+              <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=600&auto=format&fit=crop" alt="Małgorzata Rutkowska">
             </div>
           </div>
         </div>
 
-        <!-- Straight Divider Banner -->
-        <div class="about-simple-banner">
-          <h2 class="about-simple-banner-title">Pomagam nauczycielom pracować efektywniej!</h2>
-        </div>
+        <!-- THIN SEPARATOR BAR (Cienki pasek bez napisu) -->
+        <div class="about-thin-separator"></div>
 
         <!-- Second Block: Photo Left, Text Right -->
         <div class="about-block-row reverse">
           <div class="photo-shape-container">
             <div class="photo-shape-left">
-              <!-- Wstaw ścieżkę do drugiego zdjęcia O mnie -->
-              <img src="o-mnie-2.jpg" alt="Praca nauczyciela" onerror="this.style.display='none'">
+              <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=600&auto=format&fit=crop" alt="Praca nauczyciela">
             </div>
           </div>
 
@@ -883,7 +865,6 @@
     </div>
   </main>
 
-  <!-- SHOPPING CART DRAWER -->
   <div class="cart-drawer-overlay" id="cart-overlay" onclick="toggleCart(false)"></div>
   <div class="cart-drawer" id="cart-drawer">
     <div class="cart-drawer-header">
@@ -905,16 +886,15 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer>
-    <p>© 2026 Kitsun3 Kage. All rights reserved.</p>
+    <p>© 2026 <a href="https://kitsun3kage.github.io" target="_blank" rel="noopener noreferrer" class="footer-author-link">Kitsun3 Kage</a>. All rights reserved.</p>
   </footer>
 
   <script>
     // Initialize Lucide Icons
     lucide.createIcons();
 
-    // Navigation Switcher
+    // Navigation Switcher Logic
     function switchTab(tab) {
       const sections = document.querySelectorAll('.view-section');
       sections.forEach(sec => sec.classList.remove('active'));
@@ -931,7 +911,7 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Toggle Shopping Cart Drawer
+    // Toggle Shopping Cart Drawer Logic
     function toggleCart(open) {
       const overlay = document.getElementById('cart-overlay');
       const drawer = document.getElementById('cart-drawer');
