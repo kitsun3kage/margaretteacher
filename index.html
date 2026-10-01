@@ -52,7 +52,7 @@
       overflow-x: hidden;
     }
 
-    /* Header & Navigation */
+    /* Navigation Header */
     header {
       position: sticky;
       top: 0;
@@ -187,7 +187,7 @@
       margin-left: 6px;
     }
 
-    /* Main Container Views */
+    /* Views Framework */
     main {
       flex: 1;
     }
@@ -259,6 +259,7 @@
       box-shadow: 0 12px 25px rgba(97, 26, 42, 0.35);
     }
 
+    /* Circular Avatar Box */
     .hero-avatar-wrapper {
       display: flex;
       justify-content: center;
@@ -267,70 +268,58 @@
 
     .hero-avatar-card {
       position: relative;
-      width: 340px;
-      background: linear-gradient(145deg, #ffffff, var(--primary-subtle));
-      border-radius: 40px;
-      border: 2px solid var(--primary-border);
+      width: 320px;
+      height: 320px;
+      background-color: var(--bg-white);
+      border-radius: 50%;
+      border: 5px solid var(--primary);
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem;
+      justify-content: center;
       box-shadow: var(--shadow-lg);
       text-align: center;
-    }
-
-    .hero-img-box {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
       overflow: hidden;
-      border: 4px solid var(--primary);
-      box-shadow: 0 10px 20px rgba(97, 26, 42, 0.2);
-      margin-bottom: 1.25rem;
+      padding: 1.5rem;
     }
 
-    .hero-img-box img {
+    .hero-avatar-card img {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      z-index: 1;
+    }
+
+    .hero-avatar-card-content {
+      position: relative;
+      z-index: 2;
+      background-color: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(4px);
+      padding: 0.75rem 1.25rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
     }
 
     .hero-avatar-name {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 700;
       color: var(--primary);
     }
 
     .hero-avatar-role {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
-      margin-top: 0.25rem;
+      margin-top: 0.15rem;
     }
 
-    /* Waves Background & Cards */
-    .wave-section {
+    /* Cards Section */
+    .cards-section {
       background-color: var(--primary-subtle);
-      position: relative;
-      padding: 4rem 2rem 6rem 2rem;
-    }
-
-    .wave-divider {
-      width: 100%;
-      overflow: hidden;
-      line-height: 0;
-    }
-
-    .wave-divider svg {
-      position: relative;
-      display: block;
-      width: calc(100% + 1.3px);
-      height: 50px;
-    }
-
-    .wave-top {
-      position: absolute;
-      top: -40px;
-      left: 0;
+      padding: 4rem 2rem 5rem 2rem;
+      border-top: 1px solid var(--primary-border);
     }
 
     .cards-grid {
@@ -339,8 +328,6 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
-      position: relative;
-      z-index: 2;
     }
 
     .feature-card {
@@ -365,6 +352,7 @@
       height: 180px;
       overflow: hidden;
       position: relative;
+      background-color: #f2e6e8;
     }
 
     .feature-img-wrapper img {
@@ -420,7 +408,7 @@
       gap: 0.7rem;
     }
 
-    /* Page Container for Shop & About */
+    /* Page Container */
     .page-container {
       max-width: 1100px;
       margin: 0 auto;
@@ -444,7 +432,7 @@
       color: var(--text-muted);
     }
 
-    /* Empty Shop Box */
+    /* Empty Shop */
     .empty-shop-card {
       background-color: var(--bg-card);
       border: 2px dashed var(--primary-border);
@@ -480,25 +468,23 @@
       line-height: 1.6;
     }
 
-    /* ABOUT SECTION STYLES (MATCHING SCREENSHOTS) */
+    /* ABOUT SECTION STYLES */
     .about-section-wrapper {
       padding-bottom: 4rem;
     }
 
-    /* Wavy Banner Banner */
-    .about-banner-container {
-      position: relative;
-      margin: 3rem 0;
-    }
-
-    .about-banner-content {
+    /* Straight Splitter Banner */
+    .about-simple-banner {
       background-color: var(--primary);
       color: white;
       text-align: center;
       padding: 2.5rem 1.5rem;
+      margin: 3.5rem 0;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
     }
 
-    .about-banner-title {
+    .about-simple-banner-title {
       font-size: 1.8rem;
       font-weight: 800;
       letter-spacing: -0.01em;
@@ -511,10 +497,6 @@
       gap: 4rem;
       align-items: center;
       margin-bottom: 4rem;
-    }
-
-    .about-block-row.reverse {
-      grid-template-columns: 1fr 1fr;
     }
 
     .about-paragraph-group p {
@@ -541,12 +523,14 @@
       clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
       width: 100%;
       height: 380px;
+      background-color: #f2e6e8;
     }
 
     .photo-shape-right {
       clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%);
       width: 100%;
       height: 380px;
+      background-color: #f2e6e8;
     }
 
     .photo-shape-left img, .photo-shape-right img {
@@ -758,29 +742,26 @@
           </button>
         </div>
 
+        <!-- CIRCULAR AVATAR BOX -->
         <div class="hero-avatar-wrapper">
           <div class="hero-avatar-card">
-            <div class="hero-img-box">
-              <img src="" alt="Małgorzata Rutkowska — Margaret Teacher">
+            <!-- Podmień wartość src poniżej na ścieżkę do swojego zdjęcia np. src="profilowe.jpg" -->
+            <img src="profilowe.jpg" alt="Małgorzata Rutkowska" onerror="this.style.display='none'">
+            <div class="hero-avatar-card-content">
+              <h2 class="hero-avatar-name">Małgorzata Rutkowska</h2>
+              <p class="hero-avatar-role">Margaret Teacher</p>
             </div>
-            <h2 class="hero-avatar-name">Małgorzata Rutkowska</h2>
-            <p class="hero-avatar-role">Margaret Teacher</p>
           </div>
         </div>
       </section>
 
-      <!-- Wave Decorative Divider + Feature Cards -->
-      <section class="wave-section">
-        <div class="wave-divider wave-top">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,0 C150,90 350,-40 500,45 C650,130 900,10 1200,40 L1200,0 L0,0 Z" fill="#ffffff"></path>
-          </svg>
-        </div>
-
+      <!-- CARDS SECTION -->
+      <section class="cards-section">
         <div class="cards-grid">
           <div class="feature-card">
             <div class="feature-img-wrapper">
-              <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=600" alt="Sklep internetowy">
+              <!-- Wstaw własne zdjęcie do karty -->
+              <img src="sklep.jpg" alt="Sklep internetowy" onerror="this.style.display='none'">
             </div>
             <div class="feature-card-content">
               <h3 class="feature-title">Sklep internetowy</h3>
@@ -795,7 +776,8 @@
 
           <div class="feature-card">
             <div class="feature-img-wrapper">
-              <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=600" alt="Scenariusze">
+              <!-- Wstaw własne zdjęcie do karty -->
+              <img src="scenariusze.jpg" alt="Scenariusze" onerror="this.style.display='none'">
             </div>
             <div class="feature-card-content">
               <h3 class="feature-title">Scenariusze</h3>
@@ -810,7 +792,8 @@
 
           <div class="feature-card">
             <div class="feature-img-wrapper">
-              <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=600" alt="E-booki">
+              <!-- Wstaw własne zdjęcie do karty -->
+              <img src="ebooki.jpg" alt="E-booki" onerror="this.style.display='none'">
             </div>
             <div class="feature-card-content">
               <h3 class="feature-title">E-booki</h3>
@@ -846,7 +829,7 @@
       </div>
     </div>
 
-    <!-- ABOUT VIEW (MATCHING REFERENCE DESIGN) -->
+    <!-- ABOUT VIEW -->
     <div id="view-about" class="view-section">
       <div class="page-container about-section-wrapper">
         <div class="page-header">
@@ -854,7 +837,7 @@
           <p class="page-subtitle">Małgorzata Rutkowska — Margaret Teacher</p>
         </div>
 
-        <!-- First Block: Text Left, Cut Photo Right -->
+        <!-- First Block: Text Left, Photo Right -->
         <div class="about-block-row">
           <div class="about-paragraph-group">
             <p>
@@ -867,33 +850,23 @@
 
           <div class="photo-shape-container">
             <div class="photo-shape-right">
-              <img src="" alt="Małgorzata Rutkowska">
+              <!-- Wstaw ścieżkę do pierwszego zdjęcia O mnie -->
+              <img src="o-mnie-1.jpg" alt="Małgorzata Rutkowska" onerror="this.style.display='none'">
             </div>
           </div>
         </div>
 
-        <!-- Wave Wavy Header Banner -->
-        <div class="about-banner-container">
-          <div class="wave-divider">
-            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-              <path d="M0,0 C300,90 600,-40 1200,60 L1200,120 L0,120 Z" fill="#611A2A"></path>
-            </svg>
-          </div>
-          <div class="about-banner-content">
-            <h2 class="about-banner-title">Pomagam nauczycielom pracować efektywniej!</h2>
-          </div>
-          <div class="wave-divider">
-            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-              <path d="M0,0 C600,120 900,-30 1200,40 L1200,0 L0,0 Z" fill="#611A2A"></path>
-            </svg>
-          </div>
+        <!-- Straight Divider Banner -->
+        <div class="about-simple-banner">
+          <h2 class="about-simple-banner-title">Pomagam nauczycielom pracować efektywniej!</h2>
         </div>
 
-        <!-- Second Block: Cut Photo Left, Text Right -->
+        <!-- Second Block: Photo Left, Text Right -->
         <div class="about-block-row reverse">
           <div class="photo-shape-container">
             <div class="photo-shape-left">
-              <img src="https://images.unsplash.com/photo-1580894732413-a7235a16369c?auto=format&fit=crop&q=80&w=800" alt="Praca nauczyciela">
+              <!-- Wstaw ścieżkę do drugiego zdjęcia O mnie -->
+              <img src="o-mnie-2.jpg" alt="Praca nauczyciela" onerror="this.style.display='none'">
             </div>
           </div>
 
@@ -943,22 +916,18 @@
 
     // Navigation Switcher
     function switchTab(tab) {
-      // Hide all view sections
       const sections = document.querySelectorAll('.view-section');
       sections.forEach(sec => sec.classList.remove('active'));
 
-      // Deactivate all nav links
       const links = document.querySelectorAll('.nav-link');
       links.forEach(link => link.classList.remove('active'));
 
-      // Activate target view & link
       const targetSection = document.getElementById(`view-${tab}`);
       const targetNav = document.getElementById(`nav-${tab}`);
 
       if (targetSection) targetSection.classList.add('active');
       if (targetNav) targetNav.classList.add('active');
 
-      // Scroll smoothly to top
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
