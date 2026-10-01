@@ -19,29 +19,22 @@
       --primary-light: #7d2338;
       --primary-subtle: #f9eff1;
       --primary-border: #ebd1d7;
-
       --bg-white: #ffffff;
       --bg-soft: #fcf8f9;
       --bg-card: #ffffff;
-
       --text-main: #2b1f23;
       --text-muted: #5e4c52;
       --text-light: #8e7a81;
-
       --border-color: #f0e2e5;
-
       --shadow-sm: 0 4px 12px rgba(97, 26, 42, 0.05);
       --shadow-md: 0 10px 25px rgba(97, 26, 42, 0.08);
       --shadow-lg: 0 20px 40px rgba(97, 26, 42, 0.12);
-
       --radius-sm: 8px;
       --radius-md: 16px;
       --radius-lg: 24px;
       --radius-full: 9999px;
-
       --container-width: 1200px;
       --content-width: 1100px;
-
       --header-height: 74px;
     }
 
@@ -85,10 +78,6 @@
       max-width: 100%;
       display: block;
     }
-
-    /* ============================================================
-       HEADER
-    ============================================================ */
 
     header {
       position: sticky;
@@ -166,10 +155,6 @@
       font-weight: 600;
       white-space: nowrap;
     }
-
-    /* ============================================================
-       NAVIGATION
-    ============================================================ */
 
     nav {
       flex-shrink: 0;
@@ -259,7 +244,6 @@
       margin-left: 6px;
     }
 
-    /* Mobile menu button */
     .mobile-menu-btn {
       display: none;
       width: 42px;
@@ -278,10 +262,6 @@
       width: 21px;
       height: 21px;
     }
-
-    /* ============================================================
-       MAIN
-    ============================================================ */
 
     main {
       flex: 1;
@@ -308,10 +288,6 @@
         transform: translateY(0);
       }
     }
-
-    /* ============================================================
-       HERO
-    ============================================================ */
 
     .hero-container {
       width: 100%;
@@ -375,10 +351,6 @@
       height: 18px;
     }
 
-    /* ============================================================
-       HERO AVATAR
-    ============================================================ */
-
     .hero-avatar-wrapper {
       display: flex;
       justify-content: center;
@@ -405,10 +377,6 @@
       height: 100%;
       object-fit: cover;
     }
-
-    /* ============================================================
-       CARDS
-    ============================================================ */
 
     .cards-section {
       width: 100%;
@@ -513,10 +481,6 @@
       height: 16px;
     }
 
-    /* ============================================================
-       PAGE
-    ============================================================ */
-
     .page-container {
       width: 100%;
       max-width: var(--content-width);
@@ -541,10 +505,6 @@
       font-size: clamp(0.9rem, 1.5vw, 1.05rem);
       color: var(--text-muted);
     }
-
-    /* ============================================================
-       EMPTY SHOP
-    ============================================================ */
 
     .empty-shop-card {
       width: 100%;
@@ -589,10 +549,6 @@
       margin: 0 auto;
     }
 
-    /* ============================================================
-       ABOUT
-    ============================================================ */
-
     .about-section-wrapper {
       padding-bottom: clamp(3rem, 7vw, 4rem);
     }
@@ -630,10 +586,6 @@
       margin-bottom: 0;
     }
 
-    /* ============================================================
-       ABOUT PHOTOS
-    ============================================================ */
-
     .photo-shape-container {
       width: 100%;
       max-width: 440px;
@@ -663,10 +615,6 @@
       height: 100%;
       object-fit: cover;
     }
-
-    /* ============================================================
-       CART
-    ============================================================ */
 
     .cart-drawer-overlay {
       position: fixed;
@@ -774,10 +722,6 @@
       margin-bottom: 1.25rem;
     }
 
-    /* ============================================================
-       FOOTER
-    ============================================================ */
-
     footer {
       width: 100%;
       background-color: var(--bg-white);
@@ -800,10 +744,6 @@
       color: var(--primary-hover);
       text-decoration: underline;
     }
-
-    /* ============================================================
-       TABLET
-    ============================================================ */
 
     @media (max-width: 1024px) {
       .header-container {
@@ -831,10 +771,6 @@
         gap: 2.5rem;
       }
     }
-
-    /* ============================================================
-       TABLET / SMALL LAPTOP
-    ============================================================ */
 
     @media (max-width: 900px) {
       :root {
@@ -891,10 +827,6 @@
         max-width: 600px;
       }
     }
-
-    /* ============================================================
-       MOBILE
-    ============================================================ */
 
     @media (max-width: 700px) {
       .header-container {
@@ -1084,10 +1016,6 @@
       }
     }
 
-    /* ============================================================
-       SMALL PHONES
-    ============================================================ */
-
     @media (max-width: 480px) {
       .header-container {
         padding: 0.65rem 0.75rem;
@@ -1207,10 +1135,6 @@
       }
     }
 
-    /* ============================================================
-       VERY SMALL PHONES
-    ============================================================ */
-
     @media (max-width: 360px) {
       .brand-name {
         font-size: 1.25rem;
@@ -1237,10 +1161,6 @@
         font-size: 1.7rem;
       }
     }
-
-    /* ============================================================
-       LANDSCAPE PHONES
-    ============================================================ */
 
     @media (max-width: 900px) and (orientation: landscape) {
       .hero-container {
@@ -1269,10 +1189,6 @@
       }
     }
 
-    /* ============================================================
-       LARGE SCREENS
-    ============================================================ */
-
     @media (min-width: 1440px) {
       .header-container {
         max-width: 1320px;
@@ -1296,10 +1212,6 @@
       }
     }
 
-    /* ============================================================
-       REDUCED MOTION
-    ============================================================ */
-
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
@@ -1317,10 +1229,6 @@
 </head>
 
 <body>
-
-  <!-- ============================================================
-       HEADER / NAVIGATION
-  ============================================================ -->
 
   <header>
     <div class="header-container">
@@ -1400,15 +1308,7 @@
     </div>
   </header>
 
-  <!-- ============================================================
-       MAIN CONTENT
-  ============================================================ -->
-
   <main>
-
-    <!-- ==========================================================
-         HOME
-    =========================================================== -->
 
     <div id="view-home" class="view-section active">
 
@@ -1435,18 +1335,12 @@
         </div>
 
         <div class="hero-avatar-wrapper">
-
           <div class="hero-avatar-card">
             <img alt="Małgorzata Rutkowska">
           </div>
-
         </div>
 
       </section>
-
-      <!-- ========================================================
-           FEATURE CARDS
-      ========================================================= -->
 
       <section class="cards-section">
 
@@ -1483,7 +1377,6 @@
 
           </div>
 
-
           <div class="feature-card">
 
             <div class="feature-img-wrapper">
@@ -1514,7 +1407,6 @@
             </div>
 
           </div>
-
 
           <div class="feature-card">
 
@@ -1553,11 +1445,6 @@
 
     </div>
 
-
-    <!-- ==========================================================
-         SHOP
-    =========================================================== -->
-
     <div id="view-shop" class="view-section">
 
       <div class="page-container">
@@ -1594,11 +1481,6 @@
 
     </div>
 
-
-    <!-- ==========================================================
-         ABOUT
-    =========================================================== -->
-
     <div id="view-about" class="view-section">
 
       <div class="page-container about-section-wrapper">
@@ -1615,9 +1497,6 @@
 
         </div>
 
-
-        <!-- FIRST BLOCK -->
-
         <div class="about-block-row">
 
           <div class="about-paragraph-group">
@@ -1632,7 +1511,6 @@
 
           </div>
 
-
           <div class="photo-shape-container">
 
             <div class="photo-shape-right">
@@ -1643,13 +1521,7 @@
 
         </div>
 
-
-        <!-- DIVIDER -->
-
         <div class="about-thin-divider"></div>
-
-
-        <!-- SECOND BLOCK -->
 
         <div class="about-block-row reverse">
 
@@ -1660,7 +1532,6 @@
             </div>
 
           </div>
-
 
           <div class="about-paragraph-group">
 
@@ -1682,11 +1553,6 @@
 
   </main>
 
-
-  <!-- ============================================================
-       SHOPPING CART
-  ============================================================ -->
-
   <div
     class="cart-drawer-overlay"
     id="cart-overlay"
@@ -1704,13 +1570,8 @@
     <div class="cart-drawer-header">
 
       <div class="cart-drawer-title">
-
         <i data-lucide="shopping-bag"></i>
-
-        <span>
-          Mój koszyk
-        </span>
-
+        <span>Mój koszyk</span>
       </div>
 
       <button
@@ -1723,16 +1584,13 @@
 
     </div>
 
-
     <div class="cart-drawer-body">
 
       <div class="cart-empty-icon">
-
         <i
           data-lucide="shopping-cart"
           style="width: 32px; height: 32px;"
         ></i>
-
       </div>
 
       <p
@@ -1760,11 +1618,6 @@
 
   </div>
 
-
-  <!-- ============================================================
-       FOOTER
-  ============================================================ -->
-
   <footer>
 
     <p>
@@ -1782,34 +1635,13 @@
 
   </footer>
 
-
-  <!-- ============================================================
-       JAVASCRIPT
-  ============================================================ -->
-
   <script>
-
-    // ==========================================================
-    // LUCIDE
-    // ==========================================================
-
     lucide.createIcons();
-
-
-    // ==========================================================
-    // ELEMENTS
-    // ==========================================================
 
     const mainNav = document.getElementById('main-nav');
     const mobileMenuButton = document.getElementById('mobile-menu-btn');
 
-
-    // ==========================================================
-    // MOBILE MENU
-    // ==========================================================
-
     function toggleMobileMenu() {
-
       const isOpen = mainNav.classList.toggle('mobile-open');
 
       mobileMenuButton.setAttribute(
@@ -1824,9 +1656,7 @@
       lucide.createIcons();
     }
 
-
     function closeMobileMenu() {
-
       mainNav.classList.remove('mobile-open');
 
       mobileMenuButton.setAttribute(
@@ -1840,20 +1670,13 @@
       lucide.createIcons();
     }
 
-
-    // ==========================================================
-    // NAVIGATION
-    // ==========================================================
-
     function switchTab(tab) {
-
       const sections =
         document.querySelectorAll('.view-section');
 
       sections.forEach(section => {
         section.classList.remove('active');
       });
-
 
       const links =
         document.querySelectorAll('.nav-link');
@@ -1862,26 +1685,21 @@
         link.classList.remove('active');
       });
 
-
       const targetSection =
         document.getElementById(`view-${tab}`);
 
       const targetNav =
         document.getElementById(`nav-${tab}`);
 
-
       if (targetSection) {
         targetSection.classList.add('active');
       }
-
 
       if (targetNav) {
         targetNav.classList.add('active');
       }
 
-
       closeMobileMenu();
-
 
       window.scrollTo({
         top: 0,
@@ -1889,76 +1707,46 @@
       });
     }
 
-
-    // ==========================================================
-    // SHOPPING CART
-    // ==========================================================
-
     function toggleCart(open) {
-
       const overlay =
         document.getElementById('cart-overlay');
 
       const drawer =
         document.getElementById('cart-drawer');
 
-
       if (open) {
-
         overlay.classList.add('active');
         drawer.classList.add('active');
-
         document.body.style.overflow = 'hidden';
-
       } else {
-
         overlay.classList.remove('active');
         drawer.classList.remove('active');
-
         document.body.style.overflow = '';
       }
     }
 
-
-    // ==========================================================
-    // ESC KEY
-    // ==========================================================
-
     document.addEventListener('keydown', function(event) {
-
       if (event.key === 'Escape') {
-
         closeMobileMenu();
         toggleCart(false);
-
       }
-
     });
 
-
-    // ==========================================================
-    // CLOSE MOBILE MENU AFTER RESIZE
-    // ==========================================================
-
     window.addEventListener('resize', function() {
-
       if (window.innerWidth > 700) {
         closeMobileMenu();
       }
-
     });
-
-
-    // ==========================================================
-    // PREVENT SCROLL BEHIND CART
-    // ==========================================================
 
     document
       .getElementById('cart-overlay')
-      .addEventListener('touchmove', function(event) {
-        event.preventDefault();
-      }, { passive: false });
-
+      .addEventListener(
+        'touchmove',
+        function(event) {
+          event.preventDefault();
+        },
+        { passive: false }
+      );
   </script>
 
 </body>
