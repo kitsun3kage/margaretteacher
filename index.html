@@ -159,7 +159,6 @@
       justify-content: center;
       cursor: pointer;
       transition: all 0.2s ease;
-      position: relative;
     }
 
     .cart-trigger:hover {
@@ -268,31 +267,32 @@
 
     .hero-avatar-card {
       position: relative;
-      width: 320px;
-      height: 380px;
+      width: 340px;
       background: linear-gradient(145deg, #ffffff, var(--primary-subtle));
-      border-radius: 120px 120px 40px 40px;
+      border-radius: 40px;
       border: 2px solid var(--primary-border);
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       padding: 2rem;
       box-shadow: var(--shadow-lg);
       text-align: center;
     }
 
-    .hero-avatar-icon {
-      width: 120px;
-      height: 120px;
+    .hero-img-box {
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
-      background-color: var(--primary-subtle);
-      border: 3px solid var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
+      overflow: hidden;
+      border: 4px solid var(--primary);
+      box-shadow: 0 10px 20px rgba(97, 26, 42, 0.2);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .hero-avatar-name {
@@ -307,7 +307,7 @@
       margin-top: 0.25rem;
     }
 
-    /* Waves Background */
+    /* Waves Background & Cards */
     .wave-section {
       background-color: var(--primary-subtle);
       position: relative;
@@ -343,14 +343,12 @@
     .feature-card {
       background-color: var(--bg-card);
       border-radius: var(--radius-lg);
-      padding: 2.5rem 1.8rem;
-      text-align: center;
+      overflow: hidden;
       box-shadow: var(--shadow-md);
       border: 1px solid var(--border-color);
       transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
-      align-items: center;
     }
 
     .feature-card:hover {
@@ -359,16 +357,31 @@
       border-color: var(--primary-border);
     }
 
-    .feature-icon-box {
-      width: 64px;
-      height: 64px;
-      background-color: var(--primary-subtle);
-      border-radius: 50%;
+    .feature-img-wrapper {
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .feature-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .feature-card:hover .feature-img-wrapper img {
+      transform: scale(1.08);
+    }
+
+    .feature-card-content {
+      padding: 1.8rem;
       display: flex;
+      flex-direction: column;
+      flex: 1;
+      text-align: center;
       align-items: center;
-      justify-content: center;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
     }
 
     .feature-title {
@@ -464,25 +477,31 @@
       line-height: 1.6;
     }
 
-    /* About Section Text */
-    .about-card {
+    /* About Section */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 2.5rem;
+      align-items: center;
       background-color: var(--bg-card);
       border-radius: var(--radius-lg);
-      padding: 3rem;
+      padding: 2.5rem;
       box-shadow: var(--shadow-md);
       border: 1px solid var(--border-color);
-      position: relative;
     }
 
-    .about-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 3rem;
-      width: 60px;
-      height: 4px;
-      background-color: var(--primary);
-      border-radius: 0 0 4px 4px;
+    .about-image-card {
+      width: 100%;
+      height: 380px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .about-image-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .about-text {
@@ -588,6 +607,7 @@
       margin-bottom: 1.25rem;
     }
 
+    /* Footer */
     footer {
       background-color: var(--bg-white);
       border-top: 1px solid var(--border-color);
@@ -614,6 +634,14 @@
         max-width: 450px;
       }
 
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image-card {
+        height: 280px;
+      }
+
       .header-container {
         padding: 1rem;
       }
@@ -626,6 +654,7 @@
 </head>
 <body>
 
+  <!-- HEADER / NAVIGATION -->
   <header>
     <div class="header-container">
       <div class="brand-logo" onclick="switchTab('home')">
@@ -662,7 +691,9 @@
     </div>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main>
+    <!-- HOME VIEW -->
     <div id="view-home" class="view-section active">
       <section class="hero-container">
         <div class="hero-content">
@@ -678,8 +709,8 @@
 
         <div class="hero-avatar-wrapper">
           <div class="hero-avatar-card">
-            <div class="hero-avatar-icon">
-              <i data-lucide="user" style="width: 60px; height: 60px;"></i>
+            <div class="hero-img-box">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" alt="Małgorzata Rutkowska — Margaret Teacher">
             </div>
             <h2 class="hero-avatar-name">Małgorzata Rutkowska</h2>
             <p class="hero-avatar-role">Margaret Teacher</p>
@@ -687,6 +718,7 @@
         </div>
       </section>
 
+      <!-- Wave Decorative Divider + Feature Cards -->
       <section class="wave-section">
         <div class="wave-top">
           <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -696,47 +728,54 @@
 
         <div class="cards-grid">
           <div class="feature-card">
-            <div class="feature-icon-box">
-              <i data-lucide="shopping-bag" style="width: 28px; height: 28px;"></i>
+            <div class="feature-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=600" alt="Sklep internetowy">
             </div>
-            <h3 class="feature-title">Sklep internetowy</h3>
-            <p class="feature-desc">
-              Bogaty wybór materiałów edukacyjnych i szkoleniowych, które pomogą Ci wzbogacić Twoje lekcje.
-            </p>
-            <button class="feature-link" onclick="switchTab('shop')">
-              ZOBACZ WIĘCEJ <i data-lucide="chevron-right"></i>
-            </button>
+            <div class="feature-card-content">
+              <h3 class="feature-title">Sklep internetowy</h3>
+              <p class="feature-desc">
+                Bogaty wybór materiałów edukacyjnych i szkoleniowych, które pomogą Ci wzbogacić Twoje lekcje.
+              </p>
+              <button class="feature-link" onclick="switchTab('shop')">
+                ZOBACZ WIĘCEJ <i data-lucide="chevron-right"></i>
+              </button>
+            </div>
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon-box">
-              <i data-lucide="file-text" style="width: 28px; height: 28px;"></i>
+            <div class="feature-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=600" alt="Scenariusze">
             </div>
-            <h3 class="feature-title">Scenariusze</h3>
-            <p class="feature-desc">
-              Gotowe scenariusze zajęć dostosowane do indywidualnych potrzeb uczniów i programu nauczania.
-            </p>
-            <button class="feature-link" onclick="switchTab('shop')">
-              ZOBACZ WIĘCEJ <i data-lucide="chevron-right"></i>
-            </button>
+            <div class="feature-card-content">
+              <h3 class="feature-title">Scenariusze</h3>
+              <p class="feature-desc">
+                Gotowe scenariusze zajęć dostosowane do indywidualnych potrzeb uczniów i programu nauczania.
+              </p>
+              <button class="feature-link" onclick="switchTab('shop')">
+                ZOBACZ WIĘCEJ <i data-lucide="chevron-right"></i>
+              </button>
+            </div>
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon-box">
-              <i data-lucide="book" style="width: 28px; height: 28px;"></i>
+            <div class="feature-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=600" alt="E-booki">
             </div>
-            <h3 class="feature-title">E-booki</h3>
-            <p class="feature-desc">
-              Praktyczne poradniki i e-booki pełne nowoczesnych metod pracy i inspiracji pedagogicznych.
-            </p>
-            <button class="feature-link" onclick="switchTab('shop')">
-              ZOBACZ WIĘCEJ <i data-lucide="chevron-right"></i>
-            </button>
+            <div class="feature-card-content">
+              <h3 class="feature-title">E-booki</h3>
+              <p class="feature-desc">
+                Praktyczne poradniki i e-booki pełne nowoczesnych metod pracy i inspiracji pedagogicznych.
+              </p>
+              <button class="feature-link" onclick="switchTab('shop')">
+                ZOBACZ WIĘCEJ <i data-lucide="chevron-right"></i>
+              </button>
+            </div>
           </div>
         </div>
       </section>
     </div>
 
+    <!-- SHOP VIEW -->
     <div id="view-shop" class="view-section">
       <div class="page-container">
         <div class="page-header">
@@ -756,6 +795,7 @@
       </div>
     </div>
 
+    <!-- ABOUT VIEW -->
     <div id="view-about" class="view-section">
       <div class="page-container">
         <div class="page-header">
@@ -763,7 +803,10 @@
           <p class="page-subtitle">Małgorzata Rutkowska — Margaret Teacher</p>
         </div>
 
-        <div class="about-card">
+        <div class="about-grid">
+          <div class="about-image-card">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" alt="Małgorzata Rutkowska">
+          </div>
           <p class="about-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
@@ -772,6 +815,7 @@
     </div>
   </main>
 
+  <!-- SHOPPING CART DRAWER -->
   <div class="cart-drawer-overlay" id="cart-overlay" onclick="toggleCart(false)"></div>
   <div class="cart-drawer" id="cart-drawer">
     <div class="cart-drawer-header">
@@ -793,32 +837,37 @@
     </div>
   </div>
 
+  <!-- FOOTER -->
   <footer>
     <p>© 2026 Kitsun3 Kage. All rights reserved.</p>
   </footer>
 
   <script>
-
+    // Initialize Lucide Icons
     lucide.createIcons();
 
-
+    // Navigation Switcher
     function switchTab(tab) {
       // Hide all view sections
       const sections = document.querySelectorAll('.view-section');
       sections.forEach(sec => sec.classList.remove('active'));
 
+      // Deactivate all nav links
       const links = document.querySelectorAll('.nav-link');
       links.forEach(link => link.classList.remove('active'));
 
+      // Activate target view & link
       const targetSection = document.getElementById(`view-${tab}`);
       const targetNav = document.getElementById(`nav-${tab}`);
 
       if (targetSection) targetSection.classList.add('active');
       if (targetNav) targetNav.classList.add('active');
 
+      // Scroll smoothly to top
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    // Toggle Shopping Cart Drawer
     function toggleCart(open) {
       const overlay = document.getElementById('cart-overlay');
       const drawer = document.getElementById('cart-drawer');
